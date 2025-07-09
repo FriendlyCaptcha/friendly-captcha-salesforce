@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>APIKey__c</field>
-        <value xsi:type="xsd:string">A1Q0F05GGUBCR00LL86IPLJPNB2UCIK0S1JLKFD7CRDTTSGPFFUT3VNINK</value>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>Language__c</field>
@@ -16,22 +16,22 @@
     </values>
     <values>
         <field>Sitekey__c</field>
-        <value xsi:type="xsd:string">FCMKRFNE61OM0D4Q</value>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>StartMode__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">focus</value>
     </values>
     <values>
         <field>Strict__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>Theme__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">light</value>
     </values>
     <values>
         <field>Timeout__c</field>
-        <value xsi:type="xsd:double">20000.0</value>
+        <value xsi:type="xsd:int">20000</value>
     </values>
 </CustomMetadata>

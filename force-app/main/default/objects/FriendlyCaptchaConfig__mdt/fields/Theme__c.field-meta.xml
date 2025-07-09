@@ -7,6 +7,7 @@
 	<label>Theme</label>
 	<required>false</required>
 	<type>Picklist</type>
+	<defaultValue>&quot;light&quot;</defaultValue>
 	<valueSet>
 		<restricted>true</restricted>
 		<valueSetDefinition>
