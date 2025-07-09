@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage, lightning__AppPage, lightning__HomePage">
+            <property name="sitekey" type="String" label="Sitekey" description="Sitekey of your application, starts with 'FC'." />
+            <property name="apiEndpoint" type="String" label="API Endpoint" description="A Friendly Captcha API endpoint from which to load configuration. You can specify 'global' (the FC global API), 'eu' (the EU-only API), or a URL. Defaults to 'global'." />
+            <property name="startMode" type="String" label="Start Mode" description="The start mode determines the behavior around automatic activation of the widget. Activation here means the challenge gets requested and gets solved. 'auto' means the widget gets activated as soon as it is created. 'focus' means the widget gets activated as soon as the form above it is focused. 'none' means the widget does not start automatically at all; the user needs to press the widget. Defaults to 'focus'." />
+            <property name="language" type="String" label="Language" description="Language code such as 'en' for English or 'de' for German. Defaults to automatic language detection. Usually you should not set this yourself and instead let the widget detect the language automatically." />
+            <property name="theme" type="String" label="Theme" description="The theme for the widget. 'light' is a light theme with a white background. 'dark' is a dark theme with a dark background. 'auto' means the theme is automatically chosen based on the user's system preferences. Defaults to 'light'." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

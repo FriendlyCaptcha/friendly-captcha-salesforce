@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strict__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines the failure mode behavior of the captcha response verification (siteverify) result. This mode only applies when the API was not able to verify the response, which might occur for network connectivity reasons or a misconfiguration of the client. When &apos;strict&apos; is enabled, unverified responses will be set to &apos;reject&apos;, in a fail-closed behavior. When disabled (the default), unverified responses will be set to &apos;accept&apos;, in a fail-open behavior.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Strict</label>
+    <type>Checkbox</type>
+</CustomField>
