@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
 	<fullName>Theme__c</fullName>
-	<description>The theme for the widget. 'light' is a light theme with a white background. 'dark' is a dark theme with a dark background. 'auto' means the theme is automatically chosen based on the user's system preferences. Defaults to 'light'.</description>
+	<description>The theme for the widget.</description>
 	<externalId>false</externalId>
 	<fieldManageability>SubscriberControlled</fieldManageability>
 	<label>Theme</label>
-	<length>100</length>
 	<required>false</required>
-	<type>Text</type>
+	<type>Picklist</type>
+	<valueSet>
+		<restricted>true</restricted>
+		<valueSetDefinition>
+			<sorted>false</sorted>
+			<value>
+				<fullName>light</fullName>
+				<default>true</default>
+				<label>Light</label>
+				<description>A light theme with a white background.</description>
+			</value>
+			<value>
+				<fullName>dark</fullName>
+				<default>false</default>
+				<label>Dark</label>
+				<description>A dark theme with a dark background.</description>
+			</value>
+			<value>
+				<fullName>auto</fullName>
+				<default>false</default>
+				<label>Auto</label>
+				<description>The theme is automatically chosen based on the user's system preferences.</description>
+			</value>
+		</valueSetDefinition>
+	</valueSet>
 	<unique>false</unique>
 </CustomField>
