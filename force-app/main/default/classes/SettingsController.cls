@@ -16,7 +16,7 @@ public with sharing class SettingsController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static WidgetSettings get(){
+    public static WidgetSettings get() {
         return new WidgetSettings(FriendlyCaptchaConfig__mdt.getInstance('Settings'));
     }
 }
