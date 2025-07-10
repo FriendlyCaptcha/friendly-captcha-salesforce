@@ -74,5 +74,42 @@ export default class FriendlyCaptchaWidget extends LightningElement {
     }
 
     this.widget = frcaptcha.createWidget(opts);
+
+    this.widget.addEventListener('frc:widget.complete', this.handleComplete);
+    this.widget.addEventListener('frc:widget.error', this.handleError);
+    this.widget.addEventListener('frc:widget.expire', this.handleExpire);
+    this.widget.addEventListener('frc:widget.reset', this.handleReset);
+    this.widget.addEventListener('frc:widget.statechange', this.handleStateChange);
+  }
+
+  disconnectedCallback() {
+    if (this.widget !== null) {
+      this.widget.removeEventListener('frc:widget.complete', this.handleComplete);
+      this.widget.removeEventListener('frc:widget.error', this.handleError);
+      this.widget.removeEventListener('frc:widget.expire', this.handleExpire);
+      this.widget.removeEventListener('frc:widget.reset', this.handleReset);
+      this.widget.removeEventListener('frc:widget.statechange', this.handleStateChange);
+      this.widget.destroy();
+    }
+  }
+
+  handleComplete = ({ detail }) => {
+    this.dispatchEvent(new CustomEvent('complete', { detail }));
+  }
+
+  handleError = ({ detail }) => {
+    this.dispatchEvent(new CustomEvent('error', { detail }));
+  }
+
+  handleExpire = ({ detail }) => {
+    this.dispatchEvent(new CustomEvent('expire', { detail }));
+  }
+
+  handleReset = ({ detail }) => {
+    this.dispatchEvent(new CustomEvent('reset', { detail }));
+  }
+
+  handleStateChange = ({ detail }) => {
+    this.dispatchEvent(new CustomEvent('statechange', { detail }));
   }
 }
