@@ -30,7 +30,7 @@ export default class FriendlyCaptchaWidget extends LightningElement {
     }
 
     this.renderWidget();
-  };
+  }
 
   async renderedCallback() {
     this.htmlRendered = true;
@@ -73,7 +73,7 @@ export default class FriendlyCaptchaWidget extends LightningElement {
       opts.language = language;
     }
 
-    this.widget = frcaptcha.createWidget(opts);
+    this.widget = window.frcaptcha.createWidget(opts);
 
     this.widget.addEventListener('frc:widget.complete', this.handleComplete);
     this.widget.addEventListener('frc:widget.error', this.handleError);
