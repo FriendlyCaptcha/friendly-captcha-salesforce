@@ -1,4 +1,5 @@
 {
+  "namespace": "friendlycaptcha",
   "packageDirectories": [
     {
       "path": "force-app",

@@ -1,5 +1,5 @@
 @IsTest
-private class FriendlyCaptchaClientTest {
+private class ClientTest {
     @IsTest
     static void testClient() {
         StaticResource sr = [SELECT Body FROM StaticResource WHERE Name = 'test_cases' LIMIT 1];
@@ -11,7 +11,7 @@ private class FriendlyCaptchaClientTest {
 
         for (TestFixtures.TestCase testCase : fixtures.tests) {
             Options opts = new Options().strict(testCase.strict).apiKey('api-key');
-            VerifyResult result = FriendlyCaptchaClient.verifyCaptchaResponse(testCase.response, opts);
+            VerifyResult result = Client.verifyCaptchaResponse(testCase.response, opts);
             String msg = testCase.name + ' | ' + result.toString();
             System.assertEquals(testCase.expectation.shouldAccept, result.shouldAccept(), msg);
             System.assertEquals(testCase.expectation.wasAbleToVerify, result.wasAbleToVerify(), msg);

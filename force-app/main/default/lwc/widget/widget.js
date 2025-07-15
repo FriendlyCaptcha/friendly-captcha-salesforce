@@ -3,7 +3,7 @@ import { loadScript } from 'lightning/platformResourceLoader';
 import FriendlyCaptchaSDK from '@salesforce/resourceUrl/FriendlyCaptchaSDK';
 import getConfig from '@salesforce/apex/SettingsController.get'
 
-export default class FriendlyCaptchaWidget extends LightningElement {
+export default class Widget extends LightningElement {
   @api sitekey;
   @api apiEndpoint;
   @api startMode;
@@ -26,7 +26,7 @@ export default class FriendlyCaptchaWidget extends LightningElement {
     if (data) {
       this.remoteConfig = data;
     } else if (error) {
-      console.warn('[FriendlyCaptchaWidget] Error fetching configuration:', error);
+      console.warn('[friendlycaptcha-widget] Error fetching configuration:', error);
     }
 
     this.renderWidget();
@@ -56,7 +56,7 @@ export default class FriendlyCaptchaWidget extends LightningElement {
 
     const sitekey = this.sitekey || this.remoteConfig.sitekey;
     if (!sitekey) {
-      console.error('[FriendlyCaptchaWidget] Missing "sitekey" parameter')
+      console.error('[friendlycaptcha-widget] Missing "sitekey" parameter')
       return;
     }
 

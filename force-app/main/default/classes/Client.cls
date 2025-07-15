@@ -1,4 +1,4 @@
-public class FriendlyCaptchaClient {
+public class Client {
     private static final String GLOBAL_ENDPOINT = 'https://global.frcapi.com';
     private static final String EU_ENDPOINT = 'https://eu.frcapi.com';
 
@@ -7,7 +7,7 @@ public class FriendlyCaptchaClient {
     }
 
     public static VerifyResult verifyCaptchaResponse(String response) {
-        FriendlyCaptchaConfig__mdt config = FriendlyCaptchaConfig__mdt.getInstance('Settings');
+        Config__mdt config = Config__mdt.getInstance('Settings');
         Options opts = new Options()
             .apiEndpoint(config.APIEndpoint__c)
             .apiKey(config.APIKey__c)

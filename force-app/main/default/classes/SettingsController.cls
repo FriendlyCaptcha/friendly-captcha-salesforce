@@ -6,7 +6,7 @@ public with sharing class SettingsController {
         @AuraEnabled public String language;
         @AuraEnabled public String theme;
 
-        public WidgetSettings(FriendlyCaptchaConfig__mdt config) {
+        public WidgetSettings(Config__mdt config) {
             this.apiEndpoint = config.APIEndpoint__c;
             this.sitekey = config.Sitekey__c;
             this.startMode = config.StartMode__c;
@@ -17,6 +17,6 @@ public with sharing class SettingsController {
 
     @AuraEnabled(cacheable=true)
     public static WidgetSettings get() {
-        return new WidgetSettings(FriendlyCaptchaConfig__mdt.getInstance('Settings'));
+        return new WidgetSettings(Config__mdt.getInstance('Settings'));
     }
 }
