@@ -1,5 +1,6 @@
 {
-  "orgName": "agreenberg company",
+  "orgName": "friendlycaptcha-scratch",
+  "language": "en_US",
   "edition": "Developer",
   "features": ["EnableSetPasswordInApi"],
   "settings": {
