@@ -1,51 +1,51 @@
-public class Options {
+global class Options {
     private String sitekey;
     private String apiKey;
     private String apiEndpoint = 'global';
     private Boolean strict = false;
     private Integer timeout = 20000;
 
-    public String sitekey() {
+    global String sitekey() {
         return sitekey;
     }
 
-    public Options sitekey(String sitekey) {
+    global Options sitekey(String sitekey) {
         this.sitekey = sitekey;
         return this;
     }
 
-    public String apiKey() {
+    global String apiKey() {
         return apiKey;
     }
 
-    public Options apiKey(String apiKey) {
+    global Options apiKey(String apiKey) {
         this.apiKey = apiKey;
         return this;
     }
 
-    public String apiEndpoint() {
+    global String apiEndpoint() {
         return apiEndpoint;
     }
 
-    public Options apiEndpoint(String apiEndpoint) {
+    global Options apiEndpoint(String apiEndpoint) {
         this.apiEndpoint = apiEndpoint;
         return this;
     }
 
-    public Boolean strict() {
+    global Boolean strict() {
         return strict;
     }
 
-    public Options strict(Boolean strict) {
+    global Options strict(Boolean strict) {
         this.strict = strict;
         return this;
     }
 
-    public Integer timeout() {
+    global Integer timeout() {
         return timeout;
     }
 
-    public Options timeout(Integer timeout) {
+    global Options timeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
@@ -68,5 +68,5 @@ public class Options {
         }
     }
 
-    public class InvalidOptionsException extends Exception {}
+    global class InvalidOptionsException extends Exception {}
 }

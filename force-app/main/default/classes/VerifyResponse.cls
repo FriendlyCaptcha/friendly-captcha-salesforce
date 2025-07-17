@@ -1,24 +1,24 @@
-public class VerifyResponse {
-    public Boolean success;
-    public Data data;
-    public Error error;
+global class VerifyResponse {
+    global Boolean success;
+    global Data data;
+    global Error error;
 
-    public Boolean isSuccess() {
+    global Boolean isSuccess() {
         return success;
     }
 
-    public class Data {
-        public Challenge challenge;
+    global class Data {
+        global Challenge challenge;
     }
 
-    public class Challenge {
-        public String timestamp;
-        public String origin;
+    global class Challenge {
+        global String timestamp;
+        global String origin;
     }
 
-    public class Error {
-        public String error_code;
-        public String detail;
+    global class Error {
+        global String error_code;
+        global String detail;
     }
 
     public static VerifyResponse fromJSON(String jsonString) {

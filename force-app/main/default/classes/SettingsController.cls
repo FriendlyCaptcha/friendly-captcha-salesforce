@@ -1,12 +1,12 @@
-public with sharing class SettingsController {
-    public class WidgetSettings {
-        @AuraEnabled public String apiEndpoint;
-        @AuraEnabled public String sitekey;
-        @AuraEnabled public String startMode;
-        @AuraEnabled public String language;
-        @AuraEnabled public String theme;
+global with sharing class SettingsController {
+    global class WidgetSettings {
+        @AuraEnabled global String apiEndpoint;
+        @AuraEnabled global String sitekey;
+        @AuraEnabled global String startMode;
+        @AuraEnabled global String language;
+        @AuraEnabled global String theme;
 
-        public WidgetSettings(Config__mdt config) {
+        global WidgetSettings(Config__mdt config) {
             this.apiEndpoint = config.APIEndpoint__c;
             this.sitekey = config.Sitekey__c;
             this.startMode = config.StartMode__c;
@@ -16,7 +16,7 @@ public with sharing class SettingsController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static WidgetSettings get() {
+    global static WidgetSettings get() {
         return new WidgetSettings(Config__mdt.getInstance('Settings'));
     }
 }

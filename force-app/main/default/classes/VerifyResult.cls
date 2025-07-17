@@ -7,7 +7,7 @@
  * the second one to determine if the request was able to be verified.
  * If that returns false, you should alert yourself.
  */
-public class VerifyResult {
+global class VerifyResult {
     /** Whether the request was made in strict mode. */
     private Boolean strict;
 
@@ -49,7 +49,7 @@ public class VerifyResult {
      *         will be accepted if the challenge could
      *         not be verified (also called *fail open*).
      */
-    public Boolean isStrict() {
+    global Boolean isStrict() {
         return strict;
     }
 
@@ -58,7 +58,7 @@ public class VerifyResult {
      * 
      * @return true if the request should be accepted, false otherwise.
      */
-    public Boolean shouldAccept() {
+    global Boolean shouldAccept() {
         if (wasAbleToVerify()) {
             if (isEncodeError()) {
                 return false;
@@ -89,7 +89,7 @@ public class VerifyResult {
      * 
      * @return true if the request should be rejected, false otherwise.
      */
-    public Boolean shouldReject() {
+    global Boolean shouldReject() {
         return !shouldAccept();
     }
 
@@ -99,7 +99,7 @@ public class VerifyResult {
      * 
      * @return true if there was an encoding error, false otherwise.
      */
-    public Boolean isEncodeError() {
+    global Boolean isEncodeError() {
         return errorCode == ErrorCodes.FAILED_TO_ENCODE_REQUEST;
     }
 
@@ -109,7 +109,7 @@ public class VerifyResult {
      * 
      * @return true if there was a request error, false otherwise.
      */
-    public Boolean isRequestError() {
+    global Boolean isRequestError() {
         return errorCode == ErrorCodes.REQUEST_FAILED;
     }
 
@@ -118,7 +118,7 @@ public class VerifyResult {
      * 
      * @return true if there was a decoding error, false otherwise.
      */
-    public Boolean isDecodeError() {
+    global Boolean isDecodeError() {
         return errorCode == ErrorCodes.FAILED_TO_DECODE_RESPONSE;
     }
 
@@ -131,7 +131,7 @@ public class VerifyResult {
      * 
      * @return true if there was a client error, false otherwise.
      */
-    public Boolean isClientError() {
+    global Boolean isClientError() {
         return errorCode == ErrorCodes.FAILED_DUE_TO_CLIENT_ERROR;
     }
 
@@ -141,7 +141,7 @@ public class VerifyResult {
      * 
      * @return the response from the server, or null if the request failed.
      */
-    public VerifyResponse getResponse() {
+    global VerifyResponse getResponse() {
         return response;
     }
 
@@ -150,7 +150,7 @@ public class VerifyResult {
      * 
      * @return the error code, or null if not present.
      */
-    public String getErrorCode() {
+    global String getErrorCode() {
         return errorCode;
     }
 
@@ -159,7 +159,7 @@ public class VerifyResult {
      * 
      * @return the error detail, or null if not present.
      */
-    public String getErrorDetail() {
+    global String getErrorDetail() {
         return errorDetail;
     }
 
@@ -207,7 +207,7 @@ public class VerifyResult {
      * 
      * @return true if the request was able to be verified, false otherwise.
      */
-    public Boolean wasAbleToVerify() {
+    global Boolean wasAbleToVerify() {
         if (isEncodeError()) {
             // Despite not being able to make the request, if we are not even able to encode
             // the captcha response
@@ -223,7 +223,7 @@ public class VerifyResult {
      * 
      * @return the exception, or null if none was thrown.
      */
-    public Exception getException() {
+    global Exception getException() {
         return exc;
     }
 
@@ -236,5 +236,5 @@ public class VerifyResult {
         this.exc = exc;
     }
 
-    public class NullErrorException extends Exception {}
+    global class NullErrorException extends Exception {}
 }

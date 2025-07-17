@@ -1,12 +1,12 @@
-public class Client {
+global class Client {
     private static final String GLOBAL_ENDPOINT = 'https://global.frcapi.com';
     private static final String EU_ENDPOINT = 'https://eu.frcapi.com';
 
-    public static VerifyResult verifyCaptchaResponse(String response, Options opts) {
+    global static VerifyResult verifyCaptchaResponse(String response, Options opts) {
         return doRequest(response, opts);
     }
 
-    public static VerifyResult verifyCaptchaResponse(String response) {
+    global static VerifyResult verifyCaptchaResponse(String response) {
         Config__mdt config = Config__mdt.getInstance('Settings');
         Options opts = new Options()
             .apiEndpoint(config.APIEndpoint__c)
