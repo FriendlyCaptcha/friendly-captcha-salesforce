@@ -2,11 +2,19 @@
   "namespace": "friendlycaptcha",
   "packageDirectories": [
     {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "Friendly Captcha",
+      "versionDescription": ""
     }
   ],
   "name": "FriendlyCaptcha",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+  "sourceApiVersion": "62.0",
+  "packageAliases": {
+    "Friendly Captcha": "0HoWz00000004y5KAA",
+    "Friendly Captcha@0.1.0-1": "04tWz000000M6I5IAK"
+  }
 }
