@@ -10,6 +10,8 @@ export default class Widget extends LightningElement {
   @api language;
   @api theme;
 
+  @api captchaResponse;
+
   configFetched = false;
   htmlRendered = false;
   remoteConfig = {};
@@ -110,6 +112,7 @@ export default class Widget extends LightningElement {
   }
 
   handleStateChange = ({ detail }) => {
+    this.captchaResponse = detail.response;
     this.dispatchEvent(new CustomEvent('statechange', { detail }));
   }
 }
