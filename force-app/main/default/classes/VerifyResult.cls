@@ -69,11 +69,7 @@ global class VerifyResult {
             if (strict) {
                 return false;
             }
-            if (
-                errorCode.equals(ErrorCodes.REQUEST_FAILED) ||
-                errorCode.equals(ErrorCodes.FAILED_DUE_TO_CLIENT_ERROR) ||
-                errorCode.equals(ErrorCodes.FAILED_TO_DECODE_RESPONSE)
-            ) {
+            if (errorCode.equals(ErrorCodes.REQUEST_FAILED) || errorCode.equals(ErrorCodes.FAILED_DUE_TO_CLIENT_ERROR) || errorCode.equals(ErrorCodes.FAILED_TO_DECODE_RESPONSE)) {
                 return true;
             }
             return false;
