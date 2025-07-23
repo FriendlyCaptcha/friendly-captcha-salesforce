@@ -2,8 +2,9 @@
   "namespace": "friendlycaptcha",
   "packageDirectories": [
     {
-      "versionName": "ver 1.0",
-      "versionNumber": "1.0.0.NEXT",
+      "versionName": "ver 1.1",
+      "versionNumber": "1.1.0.NEXT",
+      "ancestorVersion": "HIGHEST",
       "path": "force-app",
       "package": "Friendly Captcha for Salesforce",
       "versionDescription": ""
@@ -14,6 +15,7 @@
   "sourceApiVersion": "62.0",
   "packageAliases": {
     "Friendly Captcha for Salesforce": "0HoWz000000051JKAQ",
-    "Friendly Captcha for Salesforce@1.0.0-1": "04tWz000000MTcrIAG"
+    "Friendly Captcha for Salesforce@1.0.0-1": "04tWz000000MTcrIAG",
+    "Friendly Captcha for Salesforce@1.1.0-1": "04tWz000000MUCLIA4"
   }
 }
