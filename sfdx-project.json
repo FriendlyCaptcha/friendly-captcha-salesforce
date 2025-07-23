@@ -2,22 +2,18 @@
   "namespace": "friendlycaptcha",
   "packageDirectories": [
     {
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
+      "versionName": "ver 1.0",
+      "versionNumber": "1.0.0.NEXT",
       "path": "force-app",
-      "default": true,
-      "package": "Friendly Captcha",
+      "package": "Friendly Captcha for Salesforce",
       "versionDescription": ""
     }
   ],
-  "name": "FriendlyCaptcha",
+  "name": "Friendly Captcha",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
   "packageAliases": {
-    "Friendly Captcha": "0HoWz00000004y5KAA",
-    "Friendly Captcha@0.1.0-1": "04tWz000000M6I5IAK",
-    "Friendly Captcha@0.1.0-2": "04tWz000000MENhIAO",
-    "Friendly Captcha@0.1.0-3": "04tWz000000MEfRIAW",
-    "Friendly Captcha@0.1.0-4": "04tWz000000MLiXIAW"
+    "Friendly Captcha for Salesforce": "0HoWz000000051JKAQ",
+    "Friendly Captcha for Salesforce@1.0.0-1": "04tWz000000MTcrIAG"
   }
 }
