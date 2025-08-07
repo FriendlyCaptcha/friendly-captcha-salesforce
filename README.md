@@ -142,6 +142,10 @@ rm -rf /path/to/friendly-docs/src/pages/integrations/salesforce/reference
 cp -R docs /path/to/friendly-docs/src/pages/integrations/salesforce/reference
 ```
 
+## License
+
+This is free software; you can redistribute it and/or modify it under the terms of the [Mozilla Public License Version 2.0](./LICENSE).
+
 [sf-website]: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
 [sf-npm]: https://www.npmjs.com/package/@salesforce/cli
 [apexdocs]: https://github.com/cesarParra/apexdocs

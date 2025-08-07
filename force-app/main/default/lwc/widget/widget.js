@@ -1,3 +1,10 @@
+/*!
+ * Copyright (c) Friendly Captcha GmbH 2025.
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
 import { LightningElement, api, wire } from 'lwc';
 import { loadScript } from 'lightning/platformResourceLoader';
 import FriendlyCaptchaSDK from '@salesforce/resourceUrl/FriendlyCaptchaSDK';
