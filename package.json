@@ -12,10 +12,12 @@
     "test:unit:coverage": "sfdx-lwc-jest --coverage",
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "docs": "apexdocs markdown",
     "postinstall": "husky install",
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "@cparra/apexdocs": "^3.14.0",
     "@locker/eslint-config-locker": "^0.25.2",
     "@lwc/eslint-plugin-lwc": "^2.0.0",
     "@prettier/plugin-xml": "^3.2.2",

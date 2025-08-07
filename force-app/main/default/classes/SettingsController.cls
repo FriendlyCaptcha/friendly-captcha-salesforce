@@ -1,3 +1,9 @@
+/**
+ * Helper class that exposes the 'Settings' record of the 'Config'
+ * Custom Metadata Type to the Lightning Web Component.
+ * 
+ * @ignore
+ */
 global with sharing class SettingsController {
     global class WidgetSettings {
         @AuraEnabled global String apiEndpoint;

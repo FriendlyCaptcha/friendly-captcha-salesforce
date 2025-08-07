@@ -1,3 +1,16 @@
+/**
+ * Options manages configuration parameters used by the {@link Client}.
+ * Parameters are set via a fluent interface.
+ * 
+ * **Example**
+ * ```
+ * Options opts = new Options()
+ *   .sitekey('FC0123456789ABCD')
+ *   .timeout(500);
+ * 
+ * System.debug(opts.sitekey());
+ * ```
+ */
 global class Options {
     private String sitekey;
     private String apiKey;

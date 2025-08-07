@@ -1,3 +1,9 @@
+/**
+ * Represents the data structure returned in the siteverify response
+ * from the Friendly Captcha API.
+ * 
+ * For more information, see [the API response documentation](/docs/v2/api/siteverify#response).
+ */
 global class VerifyResponse {
     global Boolean success;
     global Data data;
