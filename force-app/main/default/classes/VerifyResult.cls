@@ -7,12 +7,13 @@
 
 /**
  * VerifyResult is a wrapper around the response of an
- * /api/v2/captcha/siteverify request.
+ * `/api/v2/captcha/siteverify` request.
  * 
  * The main methods are `shouldAccept` and `wasAbleToVerify`.
  * The first one you should use to determine if the user's request should be accepted;
  * the second one to determine if the request was able to be verified.
- * If that returns false, you should alert yourself.
+ * If that returns false, it means that there was an issue in the communication with the
+ * Friendly Captcha API, and you should log an error or notify your monitoring system.
  */
 global class VerifyResult {
     /** Whether the request was made in strict mode. */
@@ -47,14 +48,12 @@ global class VerifyResult {
     }
 
     /**
-     * @return whether the `strict` option was set to true on the client. In
-     *         `strict` mode this will only return `true`
-     *         if the request was successful (e.g. verification could happen), and
-     *         the challenge was solved successfully.
+     * Whether the `strict` option was set to true on the client.
+     * In `strict` mode this will only return `true` if the request was successful
+     * (e.g. verification could happen), and the challenge was solved successfully.
      * 
-     *         By default, `strict` is set to `false`, which means that the request
-     *         will be accepted if the challenge could
-     *         not be verified (also called *fail open*).
+     * By default, `strict` is set to `false`, which means that the request
+     * will be accepted if the challenge could not be verified (also called *fail open*).
      */
     global Boolean isStrict() {
         return strict;
@@ -63,7 +62,7 @@ global class VerifyResult {
     /**
      * Determines if the user's request should be accepted.
      * 
-     * @return true if the request should be accepted, false otherwise.
+     * Returns true if the request should be accepted, false otherwise.
      */
     global Boolean shouldAccept() {
         if (wasAbleToVerify()) {
@@ -90,7 +89,7 @@ global class VerifyResult {
     /**
      * Determines if the user's request should be rejected.
      * 
-     * @return true if the request should be rejected, false otherwise.
+     * Returns rue if the request should be rejected, false otherwise.
      */
     global Boolean shouldReject() {
         return !shouldAccept();
@@ -100,7 +99,7 @@ global class VerifyResult {
      * Was unable to encode the captcha response. This means the captcha response
      * was invalid and should never be accepted.
      * 
-     * @return true if there was an encoding error, false otherwise.
+     * Returns rue if there was an encoding error, false otherwise.
      */
     global Boolean isEncodeError() {
         return errorCode == ErrorCodes.FAILED_TO_ENCODE_REQUEST;
@@ -110,7 +109,7 @@ global class VerifyResult {
      * Something went wrong making the request to the Friendly Captcha API, perhaps
      * there is a network connection issue?
      * 
-     * @return true if there was a request error, false otherwise.
+     * Returns true if there was a request error, false otherwise.
      */
     global Boolean isRequestError() {
         return errorCode == ErrorCodes.REQUEST_FAILED;
@@ -119,7 +118,7 @@ global class VerifyResult {
     /**
      * Something went wrong decoding the response from the Friendly Captcha API.
      * 
-     * @return true if there was a decoding error, false otherwise.
+     * Returns true if there was a decoding error, false otherwise.
      */
     global Boolean isDecodeError() {
         return errorCode == ErrorCodes.FAILED_TO_DECODE_RESPONSE;
@@ -132,7 +131,7 @@ global class VerifyResult {
      * 
      * See `response.error` for more details.
      * 
-     * @return true if there was a client error, false otherwise.
+     * Returns true if there was a client error, false otherwise.
      */
     global Boolean isClientError() {
         return errorCode == ErrorCodes.FAILED_DUE_TO_CLIENT_ERROR;
@@ -142,7 +141,7 @@ global class VerifyResult {
      * Get the response as was sent from the server.
      * This can be null if the request to the API could not be made successfully.
      * 
-     * @return the response from the server, or null if the request failed.
+     * Returns the response from the server, or null if the request failed.
      */
     global VerifyResponse getResponse() {
         return response;
@@ -151,7 +150,7 @@ global class VerifyResult {
     /**
      * Get the error code.
      * 
-     * @return the error code, or null if not present.
+     * Returns the error code, or null if not present.
      */
     global String getErrorCode() {
         return errorCode;
@@ -160,7 +159,7 @@ global class VerifyResult {
     /**
      * Get the error detail.
      * 
-     * @return the error detail, or null if not present.
+     * Returns the error detail, or null if not present.
      */
     global String getErrorDetail() {
         return errorDetail;
@@ -208,7 +207,7 @@ global class VerifyResult {
      * If this is false, you should notify yourself and check `getErrorCode()` to see
      * what is wrong.
      * 
-     * @return true if the request was able to be verified, false otherwise.
+     * Returns true if the request was able to be verified, false otherwise.
      */
     global Boolean wasAbleToVerify() {
         if (isEncodeError()) {
@@ -224,7 +223,7 @@ global class VerifyResult {
     /**
      * Get the exception that was thrown, if any.
      * 
-     * @return the exception, or null if none was thrown.
+     * Returns the exception, or null if none was thrown.
      */
     global Exception getException() {
         return exc;
